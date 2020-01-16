@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  margin: 0 auto;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +37,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button{
+  font-weight: 600 !important;
+  border-color: black !important;
 }

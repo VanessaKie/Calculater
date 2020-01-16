@@ -34,27 +34,36 @@ class Calc extends React.Component{
     }
 
     handlePercent = () => {
-       /*  let percent = toString(this.percent);
-        let calc = this.display.split(' ');
-        let index = this.display.indexOf(percent);
-        let start = index-1;
-        let x = calc.splice(0, start);
-        let calc2 = x.join('');
+        let calc = this.display.split(' '); //splitting string in arr
+        let index = calc.length-2; //index so the last 2 el of arr can be split off (Op + percent)
+        let x1 = calc.splice(0,index+1) // arr with el for eval for everything before the op+percent
+        let l = x1.length
+        let op = x1[l-1] //operator for final eval
+        x1 = x1.splice(0, l-1) // cut off operator
+        let pValue = calc.splice(0,index) // value of percent
+       
+        let y = x1.join('');
+        let z = pValue.join('');
 
-        let percentCalc = eval() */
-       /*  let test = 'a + b + test'
+        let x = eval(y); // eval for calculating everything befor the op and percent
+        let percent = eval(`${x}/100*${pValue}`) // eval the percent
+        let finalResult = eval(`${x}${op}${percent}`); // combining calc and percent into
+      
+        this.props.display(finalResult);
+        this.display= ' ';
+
+        /* console.log('calc',calc);
+        console.log('index',index);
+        console.log('x1', x1);
+        console.log('l', l);
+        console.log('op', op);
+        console.log('pValue', pValue);
+        console.log('y', y);
+        console.log('z', z);
+        console.log('x', x);
+        console.log('percent', percent);
+        console.log('finalResult', finalResult);  */
         
-        let a = test.split(' ');
-        let y = a.indexOf('test')
-        let start = y-1
-        let z = a.splice(0, start) */
-       /*  console.log('percent',this.percent);
-        console.log('percent',typeof(percent));
-
-        console.log('split', calc);
-        console.log('index', index);
-        console.log('splice', x);
-        console.log('new', calc2); */
     }
 
 
@@ -65,25 +74,25 @@ class Calc extends React.Component{
                     <button  onClick={this.handleClear} className="col-3 clear btn btn-dark rounded-0" value='clear'>C</button>
                     <button  className="col-3 transform btn btn-dark rounded-0" value='transform'>+/-</button>
                     <button  onClick={this.handlePercent} className="col-3 percent btn btn-dark rounded-0" value="percent">%</button>
-                    <button onClick={this.handleClickDisplay} className="col-3 divide btn btn-warning text-white rounded-0" value='/'>{String.fromCharCode(247)}</button>
+                    <button onClick={this.handleClickDisplay} className="col-3 divide btn btn-warning text-white rounded-0" value=' / '>{String.fromCharCode(247)}</button>
                 </div>
                 <div className="row">
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='7'>7</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='8'>8</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='9'>9</button>
-                    <button onClick={this.handleClickDisplay} className="col-3 mul btn btn-warning text-white rounded-0" value='*'>x</button>
+                    <button onClick={this.handleClickDisplay} className="col-3 mul btn btn-warning text-white rounded-0" value=' * '>x</button>
                 </div>
                 <div className="row">
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='4'>4</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='5'>5</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='6'>6</button>
-                    <button onClick={this.handleClickDisplay} className="col-3 min btn btn-warning text-white rounded-0" value='-'>-</button>
+                    <button onClick={this.handleClickDisplay} className="col-3 min btn btn-warning text-white rounded-0" value=' - '>-</button>
                 </div>
                 <div className="row">
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='1'>1</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='2'>2</button>
                     <button onClick={this.handleClickDisplay} className="col-3 numb btn btn-secondary rounded-0" value='3'>3</button>
-                    <button onClick={this.handleClickDisplay} className="col-3 add btn btn-warning text-white rounded-0" value='+'>+</button>
+                    <button onClick={this.handleClickDisplay} className="col-3 add btn btn-warning text-white rounded-0" value=' + '>+</button>
                 </div>
                 <div className="row">
                     <button onClick={this.handleClickDisplay} className="col-6 numb btn btn-secondary rounded-0" value='0'>0</button>

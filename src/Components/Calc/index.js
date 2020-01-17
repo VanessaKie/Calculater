@@ -73,12 +73,9 @@ class Calc extends React.Component{
         return(
             <div className="input container">
                 <div className="row">
-                    {console.log('lets see', this.display.length)}
-                   
-
-                    <button  onClick={this.handleClear} className="col-3 clear btn btn-dark rounded-0" value='clear'>C</button>
-                    <button  className="col-3 transform btn btn-dark rounded-0" value='transform'>+/-</button>
-                    <button  onClick={this.handlePercent} className="col-3 percent btn btn-dark rounded-0" value="percent">%</button>
+                    <button onClick={this.handleClear} className="col-3 clear btn btn-dark rounded-0" value='clear'>C</button>
+                    <button className="col-3 transform btn btn-dark rounded-0" value='transform'>+/-</button>
+                    <button onClick={this.handlePercent} className="col-3 percent btn btn-dark rounded-0" value="percent">%</button>
                     <button onClick={this.handleClickDisplay} className="col-3 divide btn btn-warning text-white rounded-0" value=' / '>{String.fromCharCode(247)}</button>
                 </div>
                 <div className="row">

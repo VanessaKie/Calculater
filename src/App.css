@@ -3,7 +3,14 @@
   margin: 0 auto;
 }
 
+.App-main {
+  background-color:  rgb(52, 52, 53) !important;
+}
 
+.body {
+  height: 100vh !important;
+  background-color:  rgb(52, 52, 53) !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -41,5 +48,10 @@
 
 button{
   font-weight: 600 !important;
-  border-color: black !important;
+  border-color: rgb(52, 52, 53) !important;
 }
+
+
+/* .blubb {
+  border-left-color: slategray !important;
+} */

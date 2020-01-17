@@ -23,9 +23,13 @@ class Calc extends React.Component{
     }
 
     handleCalc = () => {
-        let output = eval(this.display);
-        this.props.display(output);
-        this.display= ' ';
+        try{   
+            let output = eval(this.display);
+            this.props.display(output);
+            this.display= ' '; 
+            }   catch(error){
+                    this.props.display('Error');
+                };
     }
 
     handlePercent = () => {

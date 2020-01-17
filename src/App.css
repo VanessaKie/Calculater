@@ -51,7 +51,10 @@ button{
   border-color: rgb(52, 52, 53) !important;
 }
 
-
+input {
+  letter-spacing: 0.2rem;
+  font-size: 20px !important;
+}
 /* .blubb {
   border-left-color: slategray !important;
 } */

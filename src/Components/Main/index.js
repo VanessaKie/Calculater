@@ -23,7 +23,7 @@ class Main extends React.Component{
     render(){
         return(
             <div className ="App-main p-2">
-                <input type='text' className='output p-1 rounded-top border border-dark container bg-secondary text-right text-white font-weight-bold' value={this.state.display} />              
+                <input type='text' className='output pr-3 rounded-top border border-dark container bg-secondary text-right text-white font-weight-bold' value={this.state.display} />              
                 <Calc display={this.display}/>
             </div>
 
